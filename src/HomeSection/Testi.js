@@ -1,10 +1,7 @@
 import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import pic1 from "../Assets/pic1.jpg";
-import pic2 from "../Assets/pic2.jpg";
-import pic3 from "../Assets/pic3.jpg";
-import pic4 from "../Assets/pic4.jpg";
+
 
 const Testi = () => {
   const responsive = {
@@ -49,60 +46,35 @@ const Testi = () => {
       >
         <div className="card">
           <div className="cardT">
-            <h1>Praveen Prajpati</h1>
+            <h1>Aman Saxena</h1>
             <span>"</span>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut totam
-              non atque tempore libero corrupti voluptatum, quod sint ipsum, in
-              minima odio alias deserunt reprehenderit obcaecati ducimus magnam
-              facilis dolore!
+            They have an impressive communication process and genuine interest in our success.
             </p>
             <span>"</span>
           </div>
         </div>
         <div className="card">
           <div className="cardT">
-            <h1>Harish Pandey</h1>
+            <h1>Dinesh Pandey</h1>
             <span>"</span>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut totam
-              non atque tempore libero corrupti voluptatum, quod sint ipsum, in
-              minima odio alias deserunt reprehenderit obcaecati ducimus magnam
-              facilis dolore! Lorem ipsum dolor sit amet consectetur adipisicing
-              elit. Aut totam non atque tempore libero corrupti voluptatum, quod
-              sint ipsum, in minima odio alias deserunt reprehenderit obcaecati
-              ducimus magnam facilis dolore!
+            They listened to what we wanted and pushed us to build a quality platform together. They were great partners.
             </p>
             <span>"</span>
           </div>
         </div>
         <div className="card">
           <div className="cardT">
-            <h1>Akash Gupta</h1>
+            <h1>Narendra Kumar</h1>
             <span>"</span>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut totam
-              non libero corrupti voluptatum, quod sint ipsum, in minima odio
-              alias deserunt reprehenderit obcaecati ducimus magnam facilis
-              dolore!
+              Well Done Work !
             </p>
             <span>"</span>
           </div>
         </div>
-        <div className="card">
-          <div className="cardT">
-            <h1>Rahul Vatsalya</h1>
-            <span>"</span>
-            <p center>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut totam
-              non atque tempore libero corrupti voluptatum, quod sint ipsum, in
-              non atque tempore libero corrupti voluptatum, quod sint ipsum, in
-              minima odio alias deserunt reprehenderit obcaecati ducimus magnam
-              facilis dolore!
-            </p>
-            <span>"</span>
-          </div>
-        </div>
+        
       </Carousel>
     </div>
   );

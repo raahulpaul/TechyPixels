@@ -2,7 +2,7 @@
 
 *{
     margin: 0;
-    font-family: 'Roboto', sans-serif;
+    /* font-family: 'Roboto', sans-serif; */
     box-sizing: border-box;
 }
 
@@ -11,9 +11,27 @@
     flex-direction: column;
 }
 
+/* -------------- MNavbar -------------- */
+
+/* .Mnavbar__contact{
+    border: 2px solid black;
+    color: black;
+    border-radius: none;
+    transition: 1s;
+    background-color: none;
+} */
+
+/* .Mnavbar__contact:hover{
+    border: 2px solid black;
+    color: white;
+    background-color: black;
+    background: black;
+} */
+
+/* ------------------------------------- */
+
 .nav{
     background-color: rgb(255, 255, 255);
-    /* background-color: transparent; */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -104,6 +122,19 @@
 .nav__contact:hover{
     background-color: black;
     color: white;
+}
+
+.navR{
+    color: tomato;
+    height: 50px;
+    width: 50px;
+    margin: 4px 0 -12px;
+    z-index: 1000;
+    color: black;
+}
+
+.nav__rotate{
+    animation: 1s forwards;
 }
 
 

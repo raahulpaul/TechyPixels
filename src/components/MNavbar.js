@@ -14,24 +14,24 @@ import {
   ListItemIcon,
 } from "@material-ui/core";
 
+import "../styles/Navbar.css";
+// import main
+
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
 
 // IMPORTING ICONS
 import MenuIcon from "@material-ui/icons/Menu";
-import HomeIcon from "@material-ui/icons/Home";
-import SchoolIcon from "@material-ui/icons/School";
-import PersonIcon from "@material-ui/icons/Person";
-import BookmarksIcon from "@material-ui/icons/Bookmarks";
 
 // REACT APP IMPORTS
 import Home from "../HomeSection/Home.js";
 import MAbout from "../AboutSection/MAbout.js";
 import MOurWork from "../OurWorkSection/MOurWork.js";
-import Services from "../Service/MServices";
+import MServices from "../Service/MServices";
 import MContact from "../Contact/MContact.js";
-import Navbar from "../components/Navbarr.js";
-import MNavbar from "../components/MNavbar.js";
+import MContactSection1 from "../Contact/Section1.js";
+import mainLogo from "../Assets/mainLogo4.png";
+// import mainLogo1svg from "../Assets/mainLogo2";
 
 // LOCAL-STYLING
 const useStyles = makeStyles((theme) => ({
@@ -43,6 +43,20 @@ const useStyles = makeStyles((theme) => ({
   },
   title: {
     flexGrow: 1,
+  },
+  contact: {
+    backgroundColor: "white",
+    color: "black",
+    border: "2px solid black",
+    transition: "0.7s",
+    padding: "6px 20px",
+    borderRadius: "0px",
+    "&:hover": {
+      backgroundColor: "black",
+      color: "white",
+      border: "2px solid black",
+      padding: "6px 20px",
+    },
   },
 }));
 
@@ -60,26 +74,69 @@ function HideOnScroll(props) {
 const Header = (props) => {
   const classes = useStyles();
   const [anchor, setAnchor] = React.useState(null);
+  const [rotate, setRotate] = React.useState(null)
+  var scrollPos = 1;
+  var yPos;
+
+  const transitionNavbar = () => {
+    if (window.scrollY > scrollPos) {
+      // if (yPos > scrollPos) {
+      setRotate(true);
+      // if(anchor === true){
+      //   mainLogo
+      // }
+    } else {
+      setRotate(false);
+    }
+    yPos = window.scrollY ;
+    scrollPos = window.scrollY;
+
+    console.log(window.scroolY);
+    console.log(scrollPos);
+    console.log(yPos)
+  };
+
   const open = Boolean(anchor);
   const theme = useTheme();
+
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
   const handleMenu = (event) => {
     setAnchor(event.currentTarget);
   };
+
+  React.useEffect(() => {
+    window.addEventListener("scroll", transitionNavbar);
+    return () => window.removeEventListener("scroll", transitionNavbar);
+  }, []);
+
   return (
     <div className={classes.root}>
       <HideOnScroll {...props}>
         <BrowserRouter>
-          <AppBar>
+          <AppBar style={{ backgroundColor: "white" }}>
             <Toolbar>
               <Typography
                 variant="h5"
-                component="p"
+                // component="p"
                 // color="textSecondary"
-                style={{color:"white"}}
+                component={Link}
+                to="/"
+                style={{ color: "black", textDecoration: "none" }}
                 className={classes.title}
               >
-                TechyPixels
+                <img
+                  className={`navR ${rotate && "nav__rotate "}`}
+                  style={{
+                    height: "50px",
+                    width: "50px",
+                    margin: "4px 0 0 -12px",
+                    zIndex: "1000",
+                    color: "black",
+                  }}
+                  src={mainLogo}
+                  alt="nothing"
+                />
+                {/* Techy Pixels */}
               </Typography>
               {isMobile ? (
                 <>
@@ -90,7 +147,7 @@ const Header = (props) => {
                     aria-label="menu"
                     onClick={handleMenu}
                   >
-                    <MenuIcon />
+                    <MenuIcon style={{ color: "black" }} />
                   </IconButton>
                   <Menu
                     id="menu-appbar"
@@ -111,29 +168,20 @@ const Header = (props) => {
                       component={Link}
                       to="/"
                     >
-                      <ListItemIcon>
-                        <HomeIcon />
-                      </ListItemIcon>
-                      <Typography  variant="h6"> Home</Typography>
+                      <Typography variant="h6">Home</Typography>
                     </MenuItem>
                     <MenuItem
                       onClick={() => setAnchor(null)}
                       component={Link}
                       to="/about"
                     >
-                      <ListItemIcon>
-                        <SchoolIcon />
-                      </ListItemIcon>
-                      <Typography variant="h6"> About </Typography>
+                      <Typography variant="h6">About </Typography>
                     </MenuItem>
                     <MenuItem
                       onClick={() => setAnchor(null)}
                       component={Link}
                       to="/work"
                     >
-                      <ListItemIcon>
-                        <PersonIcon />
-                      </ListItemIcon>
                       <Typography variant="h6"> Our Work</Typography>
                     </MenuItem>
                     <MenuItem
@@ -141,9 +189,6 @@ const Header = (props) => {
                       component={Link}
                       to="/service"
                     >
-                      <ListItemIcon>
-                        {/* <BookmarksIcon /> */}
-                      </ListItemIcon>
                       <Typography variant="h6"> Service </Typography>
                     </MenuItem>
                     <MenuItem
@@ -151,10 +196,7 @@ const Header = (props) => {
                       component={Link}
                       to="/contact"
                     >
-                      <ListItemIcon>
-                        {/* <BookmarksIcon /> */}
-                      </ListItemIcon>
-                      <Typography variant="h6"> Contact </Typography>
+                      <Typography variant="h6">Contact</Typography>
                     </MenuItem>
                   </Menu>
                 </>
@@ -165,8 +207,8 @@ const Header = (props) => {
                     component={Link}
                     to="/"
                     color="default"
+                    style={{ marginRight: "8px" }}
                   >
-                    {/* <HomeIcon /> */}
                     Home
                   </Button>
                   <Button
@@ -174,8 +216,8 @@ const Header = (props) => {
                     component={Link}
                     to="/about"
                     color="default"
+                    style={{ marginRight: "8px" }}
                   >
-                    {/* <SchoolIcon /> */}
                     About
                   </Button>
                   <Button
@@ -183,8 +225,8 @@ const Header = (props) => {
                     component={Link}
                     to="/work"
                     color="default"
+                    style={{ marginRight: "8px" }}
                   >
-                    {/* <PersonIcon /> */}
                     Our Work
                   </Button>
                   <Button
@@ -192,8 +234,8 @@ const Header = (props) => {
                     component={Link}
                     to="/service"
                     color="default"
+                    style={{ marginRight: "13px" }}
                   >
-                    {/* <BookmarksIcon /> */}
                     Services
                   </Button>
                   <Button
@@ -201,8 +243,10 @@ const Header = (props) => {
                     component={Link}
                     to="/contact"
                     color="default"
+                    // className="Mnavbar__contact"
+
+                    className={classes.contact}
                   >
-                    {/* <BookmarksIcon /> */}
                     Contact
                   </Button>
                 </div>
@@ -213,7 +257,7 @@ const Header = (props) => {
             <Route exact path="/" component={Home} />
             <Route exact path="/about" component={MAbout} />
             <Route exact path="/work" component={MOurWork} />
-            <Route exact path="/service" component={Services} />
+            <Route exact path="/service" component={MServices} />
             <Route exact path="/contact" component={MContact} />
           </Switch>
         </BrowserRouter>

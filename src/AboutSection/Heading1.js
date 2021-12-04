@@ -10,25 +10,16 @@ const Heading1 = () => {
     <div style={heading} className="heading">
       <div className="sub1">
         <h1>
-          <span>We </span>
-          bring
-          <span> the </span>
-          whole
-          Techy
-          <span className="Pixels">Pixels</span>!
+        A
+          <span> Gamut </span>
+          of Services
+          <span> under </span>
+          One
+          Roof
+         
         </h1>
       </div>
-      {/* <div className="sub2">
-        <iframe
-          width="560"
-          height="315"
-          src="https://www.youtube.com/embed/I-Gfx7Xo0W0"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-      </div> */}
+     
     </div>
   );
 };

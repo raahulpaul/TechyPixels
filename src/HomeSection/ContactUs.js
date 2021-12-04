@@ -7,12 +7,10 @@ const ContactUs = () => {
       <div className="ContactUs__sub1">
         <h6>LET'S TALK</h6>
         <h1>
-          <span>
-
-          Contact
-          </span>
-          {/* <span>Us.</span> */}
-          Us.
+          <span>About</span>
+          Your
+          <span>Next</span>
+          Project.
         </h1>
       </div>
       <div>

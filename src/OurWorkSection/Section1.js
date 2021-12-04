@@ -1,59 +1,61 @@
-import React, { useState } from "react";
+import React from "react";
 import "../styles/MOurWork.css";
-import pic1 from "../Assets/pic1.jpg";
-import pic2 from "../Assets/pic2.jpg";
-import pic3 from "../Assets/pic3.jpg";
-import pic4 from "../Assets/pic4.jpg";
-import pic5 from "../Assets/pic5.jpg";
-import pic6 from "../Assets/pic6.jpg";
-import pic7 from "../Assets/pic7.jpg";
+import pic1 from "../Assets/work1.png";
+import pic2 from "../Assets/work2.png";
+import pic3 from "../Assets/work3.png";
+import pic4 from "../Assets/work4.png";
+import pic5 from "../Assets/work5.png";
+import pic6 from "../Assets/work6.png";
+import pic7 from "../Assets/work7.png";
+import pic8 from "../Assets/work8.png";
+import pic9 from "../Assets/work9.png";
 
 const Section1 = () => {
   const data = [
     {
       id: 1,
       img: pic1,
-      desc: "ASUS B9 Light Book",
+      desc: "Graphic Design 'CleanQ'",
     },
     {
       id: 2,
       img: pic2,
-      desc: "ASUS B9 Light Book",
+      desc: "Blender 3d model with adobe photoshop.",
     },
     {
       id: 3,
       img: pic3,
-      desc: "ASUS B9 Light Book",
+      desc: "Burger king impossible whopper.",
     },
     {
       id: 4,
       img: pic4,
-      desc: "ASUS B9 Light Book",
+      desc: "September Forest Design",
     },
     {
       id: 5,
       img: pic5,
-      desc: "ASUS B9 Light Book",
+      desc: "Charmee Cosmetics Design",
     },
     {
       id: 6,
       img: pic6,
-      desc: "ASUS B9 Light Book",
+      desc: "Je Suis Belle Logo Design",
     },
     {
       id: 7,
       img: pic7,
-      desc: "ASUS B9 Light Book",
+      desc: "UI for brand name 'NIKE'",
     },
     {
-      id: 1,
-      img: pic1,
-      desc: "ASUS B9 Light Book",
+      id: 8,
+      img: pic8,
+      desc: "Logo Design for 'Nanasi'",
     },
     {
-      id: 2,
-      img: pic2,
-      desc: "ASUS B9 Light Book",
+      id: 9,
+      img: pic9,
+      desc: "UI for brand name 'ADIDAS'",
     },
   ];
 
@@ -61,12 +63,7 @@ const Section1 = () => {
     <div className="OurWork">
       <section className="section1">
         <div className="sub1">
-          <h1>Our Work
-            {/* <span>Our </span>
-            W
-            <span>o</span>
-            rk */}
-          </h1>
+          <h1>Our Work</h1>
         </div>
         <hr />
         <div className="sub2">
@@ -76,10 +73,10 @@ const Section1 = () => {
                 <img className="card__img" src={user.img} alt="nothing" />
                 <div className="info">
                   <h1>{user.desc}</h1>
-                  <p>
+                  {/* <p>
                     Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                     Atque, dolor?
-                  </p>
+                  </p> */}
                 </div>
               </div>
             );
